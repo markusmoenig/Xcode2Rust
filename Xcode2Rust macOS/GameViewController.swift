@@ -12,12 +12,12 @@ import MetalKit
 class GameViewController: NSViewController {
 
     var renderer: Renderer!
-    var mtkView: MTKView!
+    var mtkView:  RMTKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let mtkView = self.view as? MTKView else {
+        guard let mtkView = self.view as? RMTKView else {
             print("View attached to GameViewController is not an MTKView")
             return
         }
@@ -30,15 +30,19 @@ class GameViewController: NSViewController {
 
         mtkView.device = defaultDevice
 
-        guard let newRenderer = Renderer(metalKitView: mtkView) else {
-            print("Renderer cannot be initialized")
-            return
-        }
+        renderer = Renderer(metalKitView: mtkView)
 
-        renderer = newRenderer
+        let t = shipping_rust_addition(30, 1);
 
+        print(t);
+        
+        let result = rust_greeting("Markus")
+        let swift_result = String(cString: result!)
+        print(swift_result)
+        rust_greeting_free(UnsafeMutablePointer(mutating: result))
+        
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 
-        mtkView.delegate = renderer
+        mtkView.delegate = renderer        
     }
 }

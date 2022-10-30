@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD5B036B290E752F003F7C12 /* librustapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD976AA3290E729C007131BA /* librustapi.a */; };
+		DD5B036D290E834C003F7C12 /* RMKTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036C290E834C003F7C12 /* RMKTView.swift */; };
+		DD5B036F290E83E3003F7C12 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036E290E83E3003F7C12 /* Math.swift */; };
+		DD5B0370290E84B3003F7C12 /* RMKTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036C290E834C003F7C12 /* RMKTView.swift */; };
+		DD5B0371290E84B3003F7C12 /* RMKTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036C290E834C003F7C12 /* RMKTView.swift */; };
+		DD5B0372290E84B6003F7C12 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036E290E83E3003F7C12 /* Math.swift */; };
+		DD5B0373290E84B7003F7C12 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B036E290E83E3003F7C12 /* Math.swift */; };
+		DD5B0375290E8A17003F7C12 /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0374290E8A17003F7C12 /* Texture2D.swift */; };
+		DD5B0376290E8A17003F7C12 /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0374290E8A17003F7C12 /* Texture2D.swift */; };
+		DD5B0377290E8A17003F7C12 /* Texture2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0374290E8A17003F7C12 /* Texture2D.swift */; };
+		DD5B0379290E8F8D003F7C12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0378290E8F8D003F7C12 /* Utils.swift */; };
+		DD5B037A290E8F8D003F7C12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0378290E8F8D003F7C12 /* Utils.swift */; };
+		DD5B037B290E8F8D003F7C12 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B0378290E8F8D003F7C12 /* Utils.swift */; };
+		DD5B037D290E90B3003F7C12 /* MetalStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B037C290E90B3003F7C12 /* MetalStates.swift */; };
+		DD5B037E290E90B3003F7C12 /* MetalStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B037C290E90B3003F7C12 /* MetalStates.swift */; };
+		DD5B037F290E90B3003F7C12 /* MetalStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5B037C290E90B3003F7C12 /* MetalStates.swift */; };
 		DD5FD10528FBD15B00853829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD10428FBD15B00853829 /* AppDelegate.swift */; };
 		DD5FD10728FBD15B00853829 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD10628FBD15B00853829 /* GameViewController.swift */; };
 		DD5FD10A28FBD15B00853829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD10828FBD15B00853829 /* Main.storyboard */; };
@@ -18,24 +34,29 @@
 		DD5FD12528FBD15C00853829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD12428FBD15C00853829 /* AppDelegate.swift */; };
 		DD5FD12728FBD15C00853829 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD12628FBD15C00853829 /* GameViewController.swift */; };
 		DD5FD12A28FBD15C00853829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD12828FBD15C00853829 /* Main.storyboard */; };
-		DD5FD12C28FBD15C00853829 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Shaders.metal */; };
-		DD5FD12D28FBD15C00853829 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Shaders.metal */; };
-		DD5FD12E28FBD15C00853829 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Shaders.metal */; };
+		DD5FD12C28FBD15C00853829 /* Metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Metal.metal */; };
+		DD5FD12D28FBD15C00853829 /* Metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Metal.metal */; };
+		DD5FD12E28FBD15C00853829 /* Metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0F928FBD15A00853829 /* Metal.metal */; };
 		DD5FD12F28FBD15C00853829 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0FA28FBD15A00853829 /* Renderer.swift */; };
 		DD5FD13028FBD15C00853829 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0FA28FBD15A00853829 /* Renderer.swift */; };
 		DD5FD13128FBD15C00853829 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5FD0FA28FBD15A00853829 /* Renderer.swift */; };
-		DD5FD13228FBD15C00853829 /* ShaderTypes.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* ShaderTypes.h */; };
-		DD5FD13328FBD15C00853829 /* ShaderTypes.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* ShaderTypes.h */; };
-		DD5FD13428FBD15C00853829 /* ShaderTypes.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* ShaderTypes.h */; };
+		DD5FD13228FBD15C00853829 /* Metal.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* Metal.h */; };
+		DD5FD13328FBD15C00853829 /* Metal.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* Metal.h */; };
+		DD5FD13428FBD15C00853829 /* Metal.h in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FB28FBD15A00853829 /* Metal.h */; };
 		DD5FD13528FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
 		DD5FD13628FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
 		DD5FD13728FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD5FD0F928FBD15A00853829 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		DD5B036C290E834C003F7C12 /* RMKTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMKTView.swift; sourceTree = "<group>"; };
+		DD5B036E290E83E3003F7C12 /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		DD5B0374290E8A17003F7C12 /* Texture2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture2D.swift; sourceTree = "<group>"; };
+		DD5B0378290E8F8D003F7C12 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DD5B037C290E90B3003F7C12 /* MetalStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalStates.swift; sourceTree = "<group>"; };
+		DD5FD0F928FBD15A00853829 /* Metal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Metal.metal; sourceTree = "<group>"; };
 		DD5FD0FA28FBD15A00853829 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
-		DD5FD0FB28FBD15A00853829 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		DD5FD0FB28FBD15A00853829 /* Metal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Metal.h; sourceTree = "<group>"; };
 		DD5FD0FC28FBD15B00853829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD5FD10128FBD15B00853829 /* Xcode2Rust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xcode2Rust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5FD10428FBD15B00853829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +73,12 @@
 		DD5FD12628FBD15C00853829 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DD5FD12928FBD15C00853829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD5FD12B28FBD15C00853829 /* Xcode2Rust_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xcode2Rust_macOS.entitlements; sourceTree = "<group>"; };
+		DD976A99290E62C2007131BA /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = "rust-api/target/release/librustapi.a"; sourceTree = "<group>"; };
+		DD976A9B290E65DA007131BA /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		DD976A9C290E6732007131BA /* librustapi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librustapi.dylib; path = "rust-api/target/release/librustapi.dylib"; sourceTree = "<group>"; };
+		DD976AA1290E67CC007131BA /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libs; path = "rust-api/libs"; sourceTree = "<group>"; };
+		DD976AA2290E6802007131BA /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = "rust-api/libs/librustapi.a"; sourceTree = "<group>"; };
+		DD976AA3290E729C007131BA /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = rustapi/libs/librustapi.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5B036B290E752F003F7C12 /* librustapi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,15 +115,22 @@
 				DD5FD11328FBD15B00853829 /* Xcode2Rust tvOS */,
 				DD5FD12328FBD15C00853829 /* Xcode2Rust macOS */,
 				DD5FD10228FBD15B00853829 /* Products */,
+				DD976A98290E62C2007131BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DD5FD0F828FBD15A00853829 /* Xcode2Rust Shared */ = {
 			isa = PBXGroup;
 			children = (
-				DD5FD0F928FBD15A00853829 /* Shaders.metal */,
 				DD5FD0FA28FBD15A00853829 /* Renderer.swift */,
-				DD5FD0FB28FBD15A00853829 /* ShaderTypes.h */,
+				DD5B037C290E90B3003F7C12 /* MetalStates.swift */,
+				DD976A9B290E65DA007131BA /* Bridge.h */,
+				DD5FD0F928FBD15A00853829 /* Metal.metal */,
+				DD5FD0FB28FBD15A00853829 /* Metal.h */,
+				DD5B036C290E834C003F7C12 /* RMKTView.swift */,
+				DD5B036E290E83E3003F7C12 /* Math.swift */,
+				DD5B0374290E8A17003F7C12 /* Texture2D.swift */,
+				DD5B0378290E8F8D003F7C12 /* Utils.swift */,
 				DD5FD0FC28FBD15B00853829 /* Assets.xcassets */,
 			);
 			path = "Xcode2Rust Shared";
@@ -142,6 +177,18 @@
 				DD5FD12B28FBD15C00853829 /* Xcode2Rust_macOS.entitlements */,
 			);
 			path = "Xcode2Rust macOS";
+			sourceTree = "<group>";
+		};
+		DD976A98290E62C2007131BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD976AA2290E6802007131BA /* librustapi.a */,
+				DD976AA3290E729C007131BA /* librustapi.a */,
+				DD976AA1290E67CC007131BA /* libs */,
+				DD976A9C290E6732007131BA /* librustapi.dylib */,
+				DD976A99290E62C2007131BA /* librustapi.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,7 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5FD13228FBD15C00853829 /* ShaderTypes.h in Resources */,
+				DD5FD13228FBD15C00853829 /* Metal.h in Resources */,
 				DD5FD10A28FBD15B00853829 /* Main.storyboard in Resources */,
 				DD5FD13528FBD15C00853829 /* Assets.xcassets in Resources */,
 				DD5FD10D28FBD15B00853829 /* LaunchScreen.storyboard in Resources */,
@@ -255,7 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5FD13328FBD15C00853829 /* ShaderTypes.h in Resources */,
+				DD5FD13328FBD15C00853829 /* Metal.h in Resources */,
 				DD5FD11A28FBD15B00853829 /* Main.storyboard in Resources */,
 				DD5FD13628FBD15C00853829 /* Assets.xcassets in Resources */,
 				DD5FD11D28FBD15B00853829 /* LaunchScreen.storyboard in Resources */,
@@ -268,7 +315,7 @@
 			files = (
 				DD5FD12A28FBD15C00853829 /* Main.storyboard in Resources */,
 				DD5FD13728FBD15C00853829 /* Assets.xcassets in Resources */,
-				DD5FD13428FBD15C00853829 /* ShaderTypes.h in Resources */,
+				DD5FD13428FBD15C00853829 /* Metal.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5FD12F28FBD15C00853829 /* Renderer.swift in Sources */,
-				DD5FD12C28FBD15C00853829 /* Shaders.metal in Sources */,
+				DD5FD12C28FBD15C00853829 /* Metal.metal in Sources */,
 				DD5FD10728FBD15B00853829 /* GameViewController.swift in Sources */,
+				DD5B036D290E834C003F7C12 /* RMKTView.swift in Sources */,
 				DD5FD10528FBD15B00853829 /* AppDelegate.swift in Sources */,
+				DD5B036F290E83E3003F7C12 /* Math.swift in Sources */,
+				DD5B037D290E90B3003F7C12 /* MetalStates.swift in Sources */,
+				DD5B0375290E8A17003F7C12 /* Texture2D.swift in Sources */,
+				DD5B0379290E8F8D003F7C12 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +343,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5FD13028FBD15C00853829 /* Renderer.swift in Sources */,
-				DD5FD12D28FBD15C00853829 /* Shaders.metal in Sources */,
+				DD5FD12D28FBD15C00853829 /* Metal.metal in Sources */,
 				DD5FD11728FBD15B00853829 /* GameViewController.swift in Sources */,
+				DD5B0370290E84B3003F7C12 /* RMKTView.swift in Sources */,
 				DD5FD11528FBD15B00853829 /* AppDelegate.swift in Sources */,
+				DD5B0372290E84B6003F7C12 /* Math.swift in Sources */,
+				DD5B037E290E90B3003F7C12 /* MetalStates.swift in Sources */,
+				DD5B0376290E8A17003F7C12 /* Texture2D.swift in Sources */,
+				DD5B037A290E8F8D003F7C12 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +359,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD5FD13128FBD15C00853829 /* Renderer.swift in Sources */,
-				DD5FD12E28FBD15C00853829 /* Shaders.metal in Sources */,
+				DD5FD12E28FBD15C00853829 /* Metal.metal in Sources */,
 				DD5FD12728FBD15C00853829 /* GameViewController.swift in Sources */,
+				DD5B0371290E84B3003F7C12 /* RMKTView.swift in Sources */,
 				DD5FD12528FBD15C00853829 /* AppDelegate.swift in Sources */,
+				DD5B0373290E84B7003F7C12 /* Math.swift in Sources */,
+				DD5B037F290E90B3003F7C12 /* MetalStates.swift in Sources */,
+				DD5B0377290E8A17003F7C12 /* Texture2D.swift in Sources */,
+				DD5B037B290E8F8D003F7C12 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,13 +664,18 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rust-api/target/release",
+					"$(PROJECT_DIR)/rustapi/libs",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moenig.Xcode2Rust;
 				PRODUCT_NAME = Xcode2Rust;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/Bridge.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -632,13 +699,18 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rust-api/target/release",
+					"$(PROJECT_DIR)/rustapi/libs",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moenig.Xcode2Rust;
 				PRODUCT_NAME = Xcode2Rust;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/Bridge.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
