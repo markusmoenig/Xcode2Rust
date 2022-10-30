@@ -1,12 +1,12 @@
-mod sphere;
+mod disc;
 
-use sphere::Sphere;
+use disc::Disc;
 
 use lazy_static::lazy_static; // 1.4.0
 use std::sync::Mutex;
 
 lazy_static! {
-    static ref SPHERE: Mutex<Sphere> = Mutex::new(Sphere::new());
+    static ref DISC: Mutex<Disc> = Mutex::new(Disc::new());
 }
 
 #[no_mangle]
@@ -14,7 +14,7 @@ pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
     let length = width as usize * height as usize * 4;
     let slice = unsafe { std::slice::from_raw_parts_mut(pixels, length) };
 
-    SPHERE.lock().unwrap().draw(slice, width as usize, height as usize);
+    DISC.lock().unwrap().draw(slice, width as usize, height as usize);
 }
 
 #[no_mangle]

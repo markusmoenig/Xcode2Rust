@@ -28,7 +28,7 @@ pub extern "C" fn rust_mouse_up(x: u32, y: u32) -> bool {
 }
 ```
 
-The example library in the the ```rustapi``` folder defines a global Sphere class which draws a circle. You can drag the circle with the mouse.
+The example library in the the ```rustapi``` folder defines a global DISC class which draws a circle. You can drag the circle with the mouse.
 
 Change the example library to fit your need, compile the library and copy the ```target/release/librustapi.a``` file into ```rustapi/libs```.
 

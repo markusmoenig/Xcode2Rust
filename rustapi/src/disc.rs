@@ -1,9 +1,9 @@
 
-pub struct Sphere {
+pub struct Disc {
 
 }
 
-impl Sphere {
+impl Disc {
 
     pub fn new() -> Self {
         Self {
