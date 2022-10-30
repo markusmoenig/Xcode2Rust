@@ -94,16 +94,9 @@ class Renderer: NSObject, MTKViewDelegate {
                 
         startDrawing()
         
-        //texture?.clear()
-        
-        //let t = texture?.buffer?.contents()
-        
-        let count = 800 * 600 * 4
+        let count =  Int(texture!.width) *  Int(texture!.height) * 4
         let result = texture?.buffer?.contents().bindMemory(to: UInt8.self, capacity: count)
-        foo_new(result!, UInt32(count))
-//        for i in 0 ..< count {
-//            result![i] = 255;
-//        }
+        rust_draw(result!, UInt32(texture!.width), UInt32(texture!.height))
         
         let renderPassDescriptor = view.currentRenderPassDescriptor
         renderPassDescriptor?.colorAttachments[0].loadAction = .load

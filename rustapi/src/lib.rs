@@ -1,38 +1,36 @@
-use std::os::raw::c_int;
+mod sphere;
 
-#[no_mangle]
-pub extern "C" fn shipping_rust_addition(a: c_int, b: c_int) -> c_int {
-    a + b
-}
+use sphere::Sphere;
 
-use std::os::raw::{c_char};
-use std::ffi::{CString, CStr};
+use lazy_static::lazy_static; // 1.4.0
+use std::sync::Mutex;
 
-#[no_mangle]
-pub extern fn rust_greeting(to: *const c_char) -> *mut c_char {
-    let c_str = unsafe { CStr::from_ptr(to) };
-    let recipient = match c_str.to_str() {
-        Err(_) => "there",
-        Ok(string) => string,
-    };
-
-    CString::new("Hello ".to_owned() + recipient).unwrap().into_raw()
+lazy_static! {
+    static ref SPHERE: Mutex<Sphere> = Mutex::new(Sphere::new());
 }
 
 #[no_mangle]
-pub extern "C" fn foo_new(pstext: *mut u8, length: u32) {
-    let slice = unsafe { std::slice::from_raw_parts_mut(pstext, length as usize) };
-    //let cstr = unsafe { CStr::from_bytes_with_nul_unchecked(slice) };
+pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
+    let length = width as usize * height as usize * 4;
+    let slice = unsafe { std::slice::from_raw_parts_mut(pixels, length) };
 
-    for i in 0..length as usize {
-        slice[i] = 255;
-    }
+    SPHERE.lock().unwrap().draw(slice, width as usize, height as usize);
 }
 
 #[no_mangle]
-pub extern fn rust_greeting_free(s: *mut c_char) {
-    unsafe {
-        if s.is_null() { return }
-        CString::from_raw(s)
-    };
+pub extern "C" fn rust_mouse_down(x: u32, y: u32) -> bool {
+    println!("mouse down {} {}", x, y);
+    true
+}
+
+#[no_mangle]
+pub extern "C" fn rust_mouse_dragged(x: u32, y: u32) -> bool {
+    println!("mouse dragged {} {}", x, y);
+    true
+}
+
+#[no_mangle]
+pub extern "C" fn rust_mouse_up(x: u32, y: u32) -> bool {
+    println!("mouse up {} {}", x, y);
+    true
 }

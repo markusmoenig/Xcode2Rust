@@ -65,45 +65,18 @@ public class RMTKView       : MTKView
     }
         
     override public func mouseDown(with event: NSEvent) {
-        /*
-        if game.state == .Running {
-            if event.clickCount == 2 {
-                hasDoubleTap = true
-            } else {
-                mouseIsDown = true
-                setMousePos(event)
-            }
-        } else
-        if game.state == .Idle {
-            if let asset = game.assetFolder.current, asset.type == .Map {
-                setMousePos(event)
-                game.mapBuilder.mapPreview.mouseDown(mousePos.x, mousePos.y)
-            }
-        }*/
+        setMousePos(event)
+        rust_mouse_down(UInt32(mousePos.x), UInt32(mousePos.y))
     }
     
     override public func mouseDragged(with event: NSEvent) {
-        /*
-        if game.state == .Running && mouseIsDown {
-            setMousePos(event)
-        }
-        
-        if game.state == .Idle {
-            if let asset = game.assetFolder.current, asset.type == .Map {
-                setMousePos(event)
-                game.mapBuilder.mapPreview.mouseDown(mousePos.x, mousePos.y)
-            }
-        }*/
+        setMousePos(event)
+        rust_mouse_dragged(UInt32(mousePos.x), UInt32(mousePos.y))
     }
     
     override public func mouseUp(with event: NSEvent) {
-        /*
-        if game.state == .Running {
-            mouseIsDown = false
-            hasTap = false
-            hasDoubleTap = false
-            setMousePos(event)
-        }*/
+        setMousePos(event)
+        rust_mouse_up(UInt32(mousePos.x), UInt32(mousePos.y))
     }
     
     override public func flagsChanged(with event: NSEvent) {

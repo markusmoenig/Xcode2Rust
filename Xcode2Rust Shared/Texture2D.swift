@@ -55,24 +55,27 @@ class Texture2D                 : NSObject
     func allocateTexture(width: Int, height: Int)
     {
         texture = nil
+        buffer = nil
+        
+        let w = ((width + 15) / 16) * 16;
         
         let textureDescriptor = MTLTextureDescriptor()
         textureDescriptor.textureType = MTLTextureType.type2D
         textureDescriptor.pixelFormat = MTLPixelFormat.bgra8Unorm
-        textureDescriptor.width = width == 0 ? 1 : width
+        textureDescriptor.width = w == 0 ? 1 : w
         textureDescriptor.height = height == 0 ? 1 : height
         textureDescriptor.resourceOptions = []
         
-        self.width = Float(width)
+        self.width = Float(w)
         self.height = Float(height)
         
         textureDescriptor.usage = MTLTextureUsage.unknown
-        
-        buffer = renderer.device.makeBuffer(length: width * height * 4)
+                
+        buffer = renderer.device.makeBuffer(length: w * height * 4)
         
         texture = buffer?.makeTexture(descriptor: textureDescriptor,
                                       offset: 0,
-                                      bytesPerRow: width * 4)
+                                      bytesPerRow: w * 4)
     }
     
     func clear(_ clearColor: float4? = nil)

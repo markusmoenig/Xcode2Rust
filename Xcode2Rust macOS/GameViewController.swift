@@ -31,15 +31,6 @@ class GameViewController: NSViewController {
         mtkView.device = defaultDevice
 
         renderer = Renderer(metalKitView: mtkView)
-
-        let t = shipping_rust_addition(30, 1);
-
-        print(t);
-        
-        let result = rust_greeting("Markus")
-        let swift_result = String(cString: result!)
-        print(swift_result)
-        rust_greeting_free(UnsafeMutablePointer(mutating: result))
         
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 

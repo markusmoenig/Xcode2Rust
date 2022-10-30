@@ -15,12 +15,12 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-int shipping_rust_addition(int a, int b);
+void rust_draw(uint8_t *pixels, uint32_t width, uint32_t height);
 
-char *rust_greeting(const char *to);
+bool rust_mouse_down(uint32_t x, uint32_t y);
 
-void rust_greeting_free(char *s);
+bool rust_mouse_dragged(uint32_t x, uint32_t y);
 
-void foo_new(uint8_t *pstext, uint32_t itextlen);
+bool rust_mouse_up(uint32_t x, uint32_t y);
 
 #endif /* Header_h */
