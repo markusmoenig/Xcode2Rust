@@ -18,19 +18,19 @@ pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_down(x: f32, y: f32) -> bool {
-    println!("mouse down {} {}", x, y);
+pub extern "C" fn rust_touch_down(x: f32, y: f32) -> bool {
+    println!("touch down {} {}", x, y);
     DISC.lock().unwrap().touch_down(x, y)
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_dragged(x: f32, y: f32) -> bool {
-    println!("mouse dragged {} {}", x, y);
+pub extern "C" fn rust_touch_dragged(x: f32, y: f32) -> bool {
+    println!("touch dragged {} {}", x, y);
     DISC.lock().unwrap().touch_dragged(x, y)
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_up(x: f32, y: f32) -> bool {
-    println!("mouse up {} {}", x, y);
+pub extern "C" fn rust_touch_up(x: f32, y: f32) -> bool {
+    println!("touch up {} {}", x, y);
     DISC.lock().unwrap().touch_up(x, y)
 }

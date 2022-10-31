@@ -18,17 +18,17 @@ pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
 
 #[no_mangle]
 /// Mouse down or touch down event
-pub extern "C" fn rust_mouse_down(x: f32, y: f32) -> bool {
+pub extern "C" fn rust_touch_down(x: f32, y: f32) -> bool {
 }
 
 #[no_mangle]
 /// Mouse dragged or touch dragged event
-pub extern "C" fn rust_mouse_dragged(x: f32, y: f32) -> bool {
+pub extern "C" fn rust_touch_dragged(x: f32, y: f32) -> bool {
 }
 
 #[no_mangle]
 /// Mouse up or touch up event
-pub extern "C" fn rust_mouse_up(x: f32, y: f32) -> bool {
+pub extern "C" fn rust_touch_up(x: f32, y: f32) -> bool {
 }
 ```
 
