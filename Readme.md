@@ -30,6 +30,8 @@ pub extern "C" fn rust_mouse_up(x: u32, y: u32) -> bool {
 
 The example library in the the ```rustapi``` folder defines a global DISC class which draws a white circle (multitthreaded via rayon). You can drag the circle with the mouse.
 
+![Image](image.png)
+
 Change the example library to fit your need, compile the library and copy the ```target/release/librustapi.a``` file into ```rustapi/libs```.
 
 Thats it, after this re-compile the Xcode project and your app or game will start inside Xcode.
