@@ -61,7 +61,7 @@ class Texture2D                 : NSObject
         
         let textureDescriptor = MTLTextureDescriptor()
         textureDescriptor.textureType = MTLTextureType.type2D
-        textureDescriptor.pixelFormat = MTLPixelFormat.bgra8Unorm
+        textureDescriptor.pixelFormat = MTLPixelFormat.rgba8Unorm
         textureDescriptor.width = w == 0 ? 1 : w
         textureDescriptor.height = height == 0 ? 1 : height
         textureDescriptor.resourceOptions = []
