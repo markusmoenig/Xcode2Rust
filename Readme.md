@@ -12,19 +12,23 @@ Xcode2Rust has a minimal Rust API, located in the *rustapi* folder of this repos
 
 ```rust
 #[no_mangle]
+/// Draw into the pixel buffer
 pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_down(x: u32, y: u32) -> bool {
+/// Mouse down or touch down event
+pub extern "C" fn rust_mouse_down(x: f32, y: f32) -> bool {
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_dragged(x: u32, y: u32) -> bool {
+/// Mouse dragged or touch dragged event
+pub extern "C" fn rust_mouse_dragged(x: f32, y: f32) -> bool {
 }
 
 #[no_mangle]
-pub extern "C" fn rust_mouse_up(x: u32, y: u32) -> bool {
+/// Mouse up or touch up event
+pub extern "C" fn rust_mouse_up(x: f32, y: f32) -> bool {
 }
 ```
 
