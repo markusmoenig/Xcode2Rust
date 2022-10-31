@@ -33,7 +33,7 @@ impl Disc {
         const LINES: usize = 1;
         let height = height as F;
 
-        let start = self.get_time();
+        // let start = self.get_time();
 
         // Draw a 2D SDF Disc multithreaded via rayon
 
@@ -58,8 +58,8 @@ impl Disc {
                 }
             });
 
-        let stop = self.get_time();
-        println!("tick time {:?}", stop - start);
+        // let stop = self.get_time();
+        // println!("tick time {:?}", stop - start);
 
     }
 
@@ -116,7 +116,7 @@ impl Disc {
     }
 
     /// Gets the current time in milliseconds
-    fn get_time(&self) -> u128 {
+    fn _get_time(&self) -> u128 {
         use std::time::{SystemTime, UNIX_EPOCH};
         let stop = SystemTime::now()
             .duration_since(UNIX_EPOCH)

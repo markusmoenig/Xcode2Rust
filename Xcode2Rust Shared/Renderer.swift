@@ -31,6 +31,8 @@ class Renderer: NSObject, MTKViewDelegate {
     var cmdBuffer                               : MTLCommandBuffer? = nil
     var scissorRect                             : MTLScissorRect? = nil
     
+    var fps                                     : UInt32 = 0
+    
     init(metalKitView: RMTKView) {
         self.view = metalKitView
         self.device = metalKitView.device
@@ -58,7 +60,8 @@ class Renderer: NSObject, MTKViewDelegate {
         super.init()
         
         metalStates = MetalStates(self)
-        self.checkTexture()
+        checkTexture()
+        checkFramerate()
     }
     
     @discardableResult func checkTexture() -> Bool
@@ -91,6 +94,10 @@ class Renderer: NSObject, MTKViewDelegate {
         guard let drawable = view.currentDrawable else {
             return
         }
+        
+//        #if DEBUG
+        let startTime = Double(Date().timeIntervalSince1970)
+//        #endif
                 
         startDrawing()
         
@@ -108,6 +115,10 @@ class Renderer: NSObject, MTKViewDelegate {
         cmdBuffer?.present(drawable)
         
         stopDrawing()
+        
+//        #if DEBUG
+        print("Draw Time: ", (Double(Date().timeIntervalSince1970) - startTime) * 1000)
+//        #endif
     }
     
     func startDrawing()
@@ -128,9 +139,29 @@ class Renderer: NSObject, MTKViewDelegate {
         self.cmdBuffer = nil
     }
     
-    func updateOnce()
-    {
-        self.view.enableSetNeedsDisplay = true
+    /// Checks the framerate and applies it
+    func checkFramerate() {
+        let fps = rust_target_fps()
+        
+        if fps > 0 {
+            view.enableSetNeedsDisplay = false
+            view.isPaused = false
+            view.preferredFramesPerSecond = Int(fps)
+        } else {
+            view.isPaused = true
+            view.enableSetNeedsDisplay = true
+        }
+        self.fps = fps
+    }
+    
+    /// Called after a user event function returns true
+    func needsUpdate() {
+        updateOnce()
+        checkFramerate()
+    }
+    
+    /// Updates the frame once
+    func updateOnce() {
         #if os(OSX)
         let nsrect : NSRect = NSRect(x:0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.setNeedsDisplay(nsrect)

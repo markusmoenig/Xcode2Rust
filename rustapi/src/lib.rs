@@ -18,6 +18,11 @@ pub extern "C" fn rust_draw(pixels: *mut u8, width: u32, height: u32) {
 }
 
 #[no_mangle]
+pub extern "C" fn rust_target_fps() -> u32 {
+    0
+}
+
+#[no_mangle]
 pub extern "C" fn rust_touch_down(x: f32, y: f32) -> bool {
     println!("touch down {} {}", x, y);
     DISC.lock().unwrap().touch_down(x, y)

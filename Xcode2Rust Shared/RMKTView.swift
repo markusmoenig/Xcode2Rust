@@ -9,7 +9,7 @@ import MetalKit
 
 public class RMTKView       : MTKView
 {
-    //var game                : Game!
+    var renderer            : Renderer!
 
     var keysDown            : [Float] = []
     
@@ -66,17 +66,23 @@ public class RMTKView       : MTKView
         
     override public func mouseDown(with event: NSEvent) {
         setMousePos(event)
-        rust_touch_down(mousePos.x, mousePos.y)
+        if rust_touch_down(mousePos.x, mousePos.y) {
+            renderer.needsUpdate()
+        }
     }
     
     override public func mouseDragged(with event: NSEvent) {
         setMousePos(event)
-        rust_touch_dragged(mousePos.x, mousePos.y)
+        if rust_touch_dragged(mousePos.x, mousePos.y) {
+            renderer.needsUpdate()
+        }
     }
     
     override public func mouseUp(with event: NSEvent) {
         setMousePos(event)
-        rust_touch_up(mousePos.x, mousePos.y)
+        if rust_touch_up(mousePos.x, mousePos.y) {
+            renderer.needsUpdate()
+        }
     }
     
     override public func flagsChanged(with event: NSEvent) {
@@ -167,7 +173,9 @@ public class RMTKView       : MTKView
         if let touch = touches.first {
             let point = touch.location(in: self)
             setMousePos(Float(point.x), Float(point.y))
-            rust_touch_down(mousePos.x, mousePos.y)
+            if rust_touch_down(mousePos.x, mousePos.y) {
+                renderer.needsUpdate()
+            }
         }
     }
     
@@ -175,7 +183,9 @@ public class RMTKView       : MTKView
         if let touch = touches.first {
             let point = touch.location(in: self)
             setMousePos(Float(point.x), Float(point.y))
-            rust_touch_dragged(mousePos.x, mousePos.y)
+            if rust_touch_dragged(mousePos.x, mousePos.y) {
+                renderer.needsUpdate()
+            }
         }
     }
     
@@ -184,7 +194,9 @@ public class RMTKView       : MTKView
         if let touch = touches.first {
             let point = touch.location(in: self)
             setMousePos(Float(point.x), Float(point.y))
-            rust_touch_up(mousePos.x, mousePos.y)
+            if rust_touch_up(mousePos.x, mousePos.y) {
+                renderer.needsUpdate()
+            }
         }
     }
     

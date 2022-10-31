@@ -31,6 +31,7 @@ class GameViewController: NSViewController {
         mtkView.device = defaultDevice
 
         renderer = Renderer(metalKitView: mtkView)
+        mtkView.renderer = renderer
         
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 

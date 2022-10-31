@@ -32,6 +32,7 @@ class GameViewController: UIViewController {
         mtkView.backgroundColor = UIColor.black
 
         renderer = Renderer(metalKitView: mtkView)
+        mtkView.renderer = renderer
 
         renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
 
