@@ -163,56 +163,28 @@ public class RMTKView       : MTKView
     
     var firstTouch = float2(0,0)
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        /*
         mouseIsDown = true
         if let touch = touches.first {
             let point = touch.location(in: self)
             setMousePos(Float(point.x), Float(point.y))
-            
-            if game.state == .Idle {
-                firstTouch.x = mousePos.x
-                firstTouch.y = mousePos.y
-                if let asset = game.assetFolder.current, asset.type == .Map {
-                    if let map = asset.map {
-                        let coords = map.reverseCoordinates(mousePos.x, mousePos.y)
-                        game.tempText = "\(coords.x) x \(coords.y)"
-                        game.tempTextChanged.send()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                            self.game.tempText = ""
-                            self.game.tempTextChanged.send()
-                        }
-                    }
-                }
-            }
-        }*/
+            rust_mouse_down(mousePos.x, mousePos.y)
+        }
     }
     
     override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        /*
         if let touch = touches.first {
             let point = touch.location(in: self)
             setMousePos(Float(point.x), Float(point.y))
-            if game.state == .Idle {
-                if let asset = game.assetFolder.current, asset.type == .Map {
-                    if let map = asset.map {
-                        map.camera2D.xOffset += mousePos.x - firstTouch.x
-                        map.camera2D.yOffset += mousePos.y - firstTouch.y
-                        
-                        firstTouch.x = mousePos.x
-                        firstTouch.y = mousePos.y
-
-                        game.mapBuilder.createPreview(map, true)
-                    }
-                }
-            }
-        }*/
+            rust_mouse_dragged(mousePos.x, mousePos.y)
+        }
     }
     
     override public func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         mouseIsDown = false
         if let touch = touches.first {
             let point = touch.location(in: self)
-                setMousePos(Float(point.x), Float(point.y))
+            setMousePos(Float(point.x), Float(point.y))
+            rust_mouse_up(mousePos.x, mousePos.y)
         }
     }
     

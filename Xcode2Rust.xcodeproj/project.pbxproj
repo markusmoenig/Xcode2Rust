@@ -46,6 +46,7 @@
 		DD5FD13528FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
 		DD5FD13628FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
 		DD5FD13728FBD15C00853829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5FD0FC28FBD15B00853829 /* Assets.xcassets */; };
+		DDAB955C290F6B6D00B79AB8 /* librustapiios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAB955B290F6B6D00B79AB8 /* librustapiios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		DD5B0374290E8A17003F7C12 /* Texture2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texture2D.swift; sourceTree = "<group>"; };
 		DD5B0378290E8F8D003F7C12 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DD5B037C290E90B3003F7C12 /* MetalStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalStates.swift; sourceTree = "<group>"; };
+		DD5B0381290F68D2003F7C12 /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = rustapi/libs_ios/librustapi.a; sourceTree = "<group>"; };
 		DD5FD0F928FBD15A00853829 /* Metal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Metal.metal; sourceTree = "<group>"; };
 		DD5FD0FA28FBD15A00853829 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		DD5FD0FB28FBD15A00853829 /* Metal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Metal.h; sourceTree = "<group>"; };
@@ -79,6 +81,9 @@
 		DD976AA1290E67CC007131BA /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = libs; path = "rust-api/libs"; sourceTree = "<group>"; };
 		DD976AA2290E6802007131BA /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = "rust-api/libs/librustapi.a"; sourceTree = "<group>"; };
 		DD976AA3290E729C007131BA /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = rustapi/libs/librustapi.a; sourceTree = "<group>"; };
+		DDAB9557290F6A9800B79AB8 /* librustapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapi.a; path = rustapi/target/universal/release/librustapi.a; sourceTree = "<group>"; };
+		DDAB9559290F6AC900B79AB8 /* librustapiios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapiios.a; path = rustapi/libs_ios/librustapiios.a; sourceTree = "<group>"; };
+		DDAB955B290F6B6D00B79AB8 /* librustapiios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librustapiios.a; path = rustapi/libs/librustapiios.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDAB955C290F6B6D00B79AB8 /* librustapiios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,8 +188,12 @@
 		DD976A98290E62C2007131BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDAB9559290F6AC900B79AB8 /* librustapiios.a */,
+				DDAB955B290F6B6D00B79AB8 /* librustapiios.a */,
 				DD976AA2290E6802007131BA /* librustapi.a */,
 				DD976AA3290E729C007131BA /* librustapi.a */,
+				DD5B0381290F68D2003F7C12 /* librustapi.a */,
+				DDAB9557290F6A9800B79AB8 /* librustapi.a */,
 				DD976AA1290E67CC007131BA /* libs */,
 				DD976A9C290E6732007131BA /* librustapi.dylib */,
 				DD976A99290E62C2007131BA /* librustapi.a */,
@@ -545,12 +555,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rustapi/libs",
+					"$(PROJECT_DIR)/rustapi/libs_ios",
+					"$(PROJECT_DIR)/rustapi/target/universal/release",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moenig.Xcode2Rust;
 				PRODUCT_NAME = Xcode2Rust;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -576,12 +592,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/rustapi/libs",
+					"$(PROJECT_DIR)/rustapi/libs_ios",
+					"$(PROJECT_DIR)/rustapi/target/universal/release",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.moenig.Xcode2Rust;
 				PRODUCT_NAME = Xcode2Rust;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/ShaderTypes.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode2Rust Shared/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

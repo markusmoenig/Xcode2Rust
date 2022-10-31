@@ -10,4 +10,5 @@ lazy_static = "1.4.0"
 rayon = "1.5.3"
 
 [lib]
+name = "rustapi"
 crate-type = ["staticlib"]
