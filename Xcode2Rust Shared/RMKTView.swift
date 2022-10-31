@@ -66,17 +66,17 @@ public class RMTKView       : MTKView
         
     override public func mouseDown(with event: NSEvent) {
         setMousePos(event)
-        rust_mouse_down(UInt32(mousePos.x), UInt32(mousePos.y))
+        rust_mouse_down(mousePos.x, mousePos.y)
     }
     
     override public func mouseDragged(with event: NSEvent) {
         setMousePos(event)
-        rust_mouse_dragged(UInt32(mousePos.x), UInt32(mousePos.y))
+        rust_mouse_dragged(mousePos.x, mousePos.y)
     }
     
     override public func mouseUp(with event: NSEvent) {
         setMousePos(event)
-        rust_mouse_up(UInt32(mousePos.x), UInt32(mousePos.y))
+        rust_mouse_up(mousePos.x, mousePos.y)
     }
     
     override public func flagsChanged(with event: NSEvent) {
