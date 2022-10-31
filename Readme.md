@@ -55,6 +55,14 @@ The example library sets the target framerate to 0 and returns true for rust_tou
 
 But again, for a game you would just set the target fps to a specific value and be done with it.
 
+## Compiling the Rust library
+
+When you change the example library you will need to recompile it.
+
+For a macOS build, you can just compile the rustapi library with ```cargo build --release``` and copy the resulting *target/release/librustapi.a* to the *rustapi/libs* folder.
+
+For iOS builds I currently use ```cargo lipo --release --targets aarch64-apple-ios``` (you can install lipo with ```cargo install cargo-lipo```). Copy the resulting *target/aarch64-apple-ios/universal/librustapi.a* file to *rustapi/libs/librustapiios.a*. Note that this library works only on devices, not in the simulator. Normally ```cargo lipo --release``` should create a binary for both the simulator and devices, however for me the build fails right now for some reason.
+
 ## Goals
 
 * Provide all user events and gestures to the Rust API (mouse and keyboard events, gestures).
